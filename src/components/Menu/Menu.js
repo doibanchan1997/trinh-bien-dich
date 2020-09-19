@@ -4,27 +4,27 @@ import {Route, Link} from 'react-router-dom'
 const menus = [
   {
     name: "Home",
-    to: '/',
+    to: '/quan-ly-bai-viet',
     exact: true
   },
   {
     name: "About",
-    to: '/about',
+    to: '/quan-ly-bai-viet/about',
     exact: false
   },
   {
     name: "Contact",
-    to: '/contact',
+    to: '/quan-ly-bai-viet/contact',
     exact: false
   },
   {
     name: "Vlog",
-    to: '/vlog',
+    to: '/quan-ly-bai-viet/vlog',
     exact: false
   },
   {
     name: "Login",
-    to: '/login',
+    to: '/quan-ly-bai-viet/login',
     exact: false
   }
 ]
