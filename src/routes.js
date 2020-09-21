@@ -1,11 +1,11 @@
 import React from 'react';
-import Home from './containers/Home/Home';
+import News from './containers/News/News';
 
 const routes = [
     {
         path: '/quan-ly-bai-viet',
         exact: true,
-        main: ()=><Home/>
+        main: ()=><News/>
     }
 ]
 export default routes;
