@@ -7,7 +7,8 @@ import './NewsForm.css';
 import *as  modalAction from './../../actions/modal';
 import *as newsAction from './../../actions/news'
 const NewsForm = (props) =>{
-  const {modalActionCreators, newsActionCreators} = props;
+  const {modalActionCreators, newsActionCreators, initialValues} = props;
+  console.log(initialValues);
   const {hiddenModal} = modalActionCreators;
   const {handleSubmit} = props;
   const handleSubmitForm = (data) =>{
@@ -41,6 +42,14 @@ const NewsForm = (props) =>{
       </form>
     )
 }  
+
+const mapStateToProps = state =>{
+  return {
+    newsEditing: state.news.newsEditing,
+    initialValues: state.news.newsEditing
+
+  }
+}
 const mapDispatchToProps = (dispatch, ownProps) => {
   return {
     modalActionCreators : bindActionCreators(modalAction, dispatch),
@@ -48,7 +57,7 @@ const mapDispatchToProps = (dispatch, ownProps) => {
     }
   }
 
-const withConnect = connect(null, mapDispatchToProps);
+const withConnect = connect(mapStateToProps, mapDispatchToProps);
 const FORM_NAME = 'NEWS_MANAGEMENT'
   const withReduxForm = reduxForm({
     form: FORM_NAME

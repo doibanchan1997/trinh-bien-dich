@@ -20,10 +20,18 @@ const News = (props) => {
         const {modalActionCreators} = props;
         const {showModal, changeModalTitle, changeModalContent} = modalActionCreators;
         showModal();
-        changeModalTitle("Them Moi Cong viec");
+        changeModalTitle("Them Moi Bai Viet");
         changeModalContent(<NewsForm/>)
       }
-
+      const handleClickEdit = (news) => {
+        const { newsActionCreators, modalActionCreators } = props;
+        const {setNewsEditing} = newsActionCreators;
+        setNewsEditing(news);
+        const {showModal, changeModalTitle, changeModalContent} = modalActionCreators;
+        showModal();
+        changeModalTitle("Sua Bai Viet");
+        changeModalContent(<NewsForm/>)
+      }
       let renderNewsItem = () => {
         let { listNew } = props;
         let  xhtml = null;
@@ -34,6 +42,7 @@ const News = (props) => {
                 key={index}
                 news = {item}
                 index = {index}
+                onClickEdit = {()=>handleClickEdit(item)}
               />
             );
           }))

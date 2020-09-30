@@ -1,7 +1,7 @@
 import React from 'react';
 import './NewsItem.css';
 const NewsItem =(props) => {
-    let {news, index} = props
+    let {news, index, onClickEdit} = props
     return (
         <tr>
             <td>{index}</td>
@@ -10,7 +10,7 @@ const NewsItem =(props) => {
             <td>{news.post_status}</td>
             <td><img src="https://www.google.com/url?sa=i&url=https%3A%2F%2Ffptshop.com.vn%2Fdien-thoai%2Fiphone-11-64gb&psig=AOvVaw2UyWqosQHaYBgjXq8_m1wr&ust=1600927092895000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCOiqsafM_usCFQAAAAAdAAAAABAE"></img></td>
             <td className="d-flex   flex-row">
-                <button type="button" className="btn btn-primary mr-2" data-toggle="modal" data-target="#exampleModal"><i className="fas fa-pen mr-2"></i> 
+                <button onClick={onClickEdit} type="button" className="btn btn-primary mr-2" data-toggle="modal" data-target="#exampleModal"><i className="fas fa-pen mr-2"></i> 
                 Sửa
                 </button>
                 

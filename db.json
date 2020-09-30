@@ -1,6 +1,27 @@
 {
   "news": [
     {
+      "id": 12123123123123,
+      "titleNews": "iphone x",
+      "authorNews": "20000",
+      "nameNews": "ban dien thoai",
+      "news": "hao dep trai"
+    },
+    {
+      "titleNews": "asdfsdf",
+      "authorNews": "asdfasdf",
+      "nameNews": "asdfasdf",
+      "news": "<p>sdfasdf</p>",
+      "id": "dc528dea-1324-4dcc-a221-1f8501af7a36"
+    },
+    {
+      "titleNews": "asdfsdfa",
+      "authorNews": "asdfasdf",
+      "nameNews": "asdfsdf",
+      "news": "<p>asdfsadf</p>",
+      "id": "4fb687c6-ce5c-4cd9-86e3-b6cb31fa8265"
+    },
+    {
       "ID": "2",
       "post_author": "1",
       "post_date": "2019-04-17 16:21:37",
@@ -20550,27 +20571,7 @@
       "post_mime_type": "",
       "comment_count": "0"
     },
-    {
-      "id": 12123123123123,
-      "titleNews": "iphone x",
-      "authorNews": "20000",
-      "nameNews": "ban dien thoai",
-      "news": "hao dep trai"
-    },
-    {
-      "titleNews": "asdfsdf",
-      "authorNews": "asdfasdf",
-      "nameNews": "asdfasdf",
-      "news": "<p>sdfasdf</p>",
-      "id": "dc528dea-1324-4dcc-a221-1f8501af7a36"
-    },
-    {
-      "titleNews": "asdfsdfa",
-      "authorNews": "asdfasdf",
-      "nameNews": "asdfsdf",
-      "news": "<p>asdfsadf</p>",
-      "id": "4fb687c6-ce5c-4cd9-86e3-b6cb31fa8265"
-    },
+    
     {
       "news": "<p>asdfasdf</p>",
       "id": "e9df22ff-8410-4eb0-981e-2fa2c3ee11af"

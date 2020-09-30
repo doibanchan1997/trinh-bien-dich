@@ -50,3 +50,41 @@ export const fetchListNewsError = (error)=> {
         }
      }
  }
+
+ // update news
+ export const updateNews = (titleNews, nameNews, news, authorNews ) => {
+     return {
+         type: newsConstants.UPDATE_NEWS,
+         payload: {
+            titleNews,
+            nameNews,
+            authorNews,
+            news
+         }
+     }
+ }
+ export const updateNewsSuccess = (data) => {
+     return {
+         type: newsConstants.UPDATE_NEWS_SUCCESS,
+         payload: {
+             data
+         }
+     }
+ }
+ export const updateNewsError = (error) => {
+     return {
+         type: newsConstants.UPDATE_NEWS_ERROR,
+         payload: {
+             error
+         }
+     }
+ }
+
+ export const setNewsEditing = (news) =>{
+     return {
+         type: newsConstants.SET_NEWS_EDITING,
+         payload: {
+             news,
+         }
+     }
+ }
