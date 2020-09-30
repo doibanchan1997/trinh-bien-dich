@@ -6,6 +6,7 @@ import {
   Route,
   NavLink
 } from 'react-router-dom';
+import './Adminboard.css'
 import Footer from '../../components/Footer/Footer';
 import Sidebar from '../../components/Sidebar/Sidebar';
 import Topbar from '../../components/Topbar/Topbar';

@@ -1,18 +1,29 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import NewsList from '../../components/NewsList/NewsList';
 import NewsItem from '../../components/NewsItem/NewsItem';
-
-import * as newsAction from './../../actions/news'
+import * as newsAction from './../../actions/news';
+import *as modalAction from './../../actions/modal';
 import { connect } from "react-redux";
 import { bindActionCreators, compose } from 'redux';
+import NewsForm from '../NewsForm/NewsForm';
+import { change } from 'redux-form';
+// const NewsList = React.lazy(()=> import('./../../components/NewsList/NewsList'));
+// const NewsItem = React.lazy(()=> import('./../../components/NewsItem/NewsItem'));
+
 const News = (props) => {
     useEffect(() => {
-        const { newsActionCreaters } = props;
-        console.log(props);
-        const { fetchListNews } = newsActionCreaters;
+        const { newsActionCreators } = props;
+        const { fetchListNews } = newsActionCreators;
         fetchListNews();
       }, []);
-      
+      const handleClickOpen  = () =>{
+        const {modalActionCreators} = props;
+        const {showModal, changeModalTitle, changeModalContent} = modalActionCreators;
+        showModal();
+        changeModalTitle("Them Moi Cong viec");
+        changeModalContent(<NewsForm/>)
+      }
+
       let renderNewsItem = () => {
         let { listNew } = props;
         let  xhtml = null;
@@ -34,13 +45,17 @@ const News = (props) => {
     return (
         <div className="card shadow mb-4">
             <div className="card-header py-3">
-            <h6 className="m-0 font-weight-bold text-primary">DataTables Example</h6>
+            <h5 className="m-0 font-weight-bold text-primary pb-3">Danh Sach Tin</h5>
+            <button type="button" onClick={handleClickOpen} className="btn btn-primary"><i className="fas fa-pen mr-2"></i> 
+                Them moi tin tuc
+            </button>
             </div>
             <NewsList>
             {
               renderNewsItem()
             }
             </NewsList>
+            
             
         </div>
     )
@@ -53,7 +68,8 @@ const mapStateToProps = state =>{
   
   const mapDispatchToProps = (dispatch) => {
     return {
-        newsActionCreaters : bindActionCreators(newsAction, dispatch)
+        newsActionCreators : bindActionCreators(newsAction, dispatch),
+        modalActionCreators : bindActionCreators(modalAction, dispatch)
       }
     }
   
@@ -61,5 +77,5 @@ const mapStateToProps = state =>{
     mapStateToProps,
     mapDispatchToProps
   )
-   
+  
   export default compose(withConnect)(News)

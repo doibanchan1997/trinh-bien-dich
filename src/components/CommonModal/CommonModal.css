@@ -1,0 +1,12 @@
+.show{
+    display: block;
+    background-color: #00000054;
+}
+.modal .modal-dialog {
+    max-width: 850px !important;
+    max-height: 800px !important;
+}
+.modal-body {
+    max-height: calc(100vh - 150px);
+    overflow-y: auto;
+}

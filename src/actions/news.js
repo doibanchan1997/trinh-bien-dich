@@ -20,3 +20,33 @@ export const fetchListNewsError = (error)=> {
         }
     }
 }
+
+// ADD NEWS;
+ export const addNews =  (titleNews , authorNews, nameNews, news)=>{
+     return {
+         type: newsConstants.ADD_NEWS,
+        payload: {
+            titleNews,
+            authorNews,
+            nameNews,
+            news,
+        }
+     }
+ }
+ export const addNewsSuccess = data =>{
+     return {
+         type: newsConstants.ADD_NEWS_SUCCESS,
+         payload: {
+             data,
+         }
+     }
+ }
+
+ export const addNewsError = error => {
+     return {
+         type: newsConstants.ADD_NEWS_ERROR,
+         payload: {
+            error,
+        }
+     }
+ }
