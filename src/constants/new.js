@@ -11,6 +11,11 @@ export const UPDATE_NEWS = "UPDATE_NEWS";
 export const UPDATE_NEWS_SUCCESS = "UPDATE_NEWS_SUCCESS";
 export const UPDATE_NEWS_ERROR = "UPDATE_NEWS_ERROR";
 
+// delete news
+export const DELETE_NEWS = "DELETE_NEWS";
+export const DELETE_NEWS_SUCCESS = "DELETE_NEWS_SUCCESS";
+export const DELETE_NEWS_ERROR = "DELETE_NEWS_ERROR";
+
 // set new editting
 export const SET_NEWS_EDITING = "SET_NEWS_EDITING";
 

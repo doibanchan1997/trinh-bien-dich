@@ -21,5 +21,8 @@ class AxiosService {
      put(url, body){
          return this.instance.put(url, body);
      }
+     delete(url, body){
+        return this.instance.delete(url, body);
+    }
 }
 export default new AxiosService();

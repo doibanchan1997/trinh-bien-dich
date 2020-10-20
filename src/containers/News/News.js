@@ -17,6 +17,9 @@ const News = (props) => {
         fetchListNews();
       }, []);
       const handleClickOpen  = () =>{
+        const { newsActionCreators} = props;
+        const {setNewsEditing} = newsActionCreators;
+        setNewsEditing(null)
         const {modalActionCreators} = props;
         const {showModal, changeModalTitle, changeModalContent} = modalActionCreators;
         showModal();
@@ -24,14 +27,38 @@ const News = (props) => {
         changeModalContent(<NewsForm/>)
       }
       const handleClickEdit = (news) => {
-        const { newsActionCreators, modalActionCreators } = props;
+        const { newsActionCreators } = props;
         const {setNewsEditing} = newsActionCreators;
         setNewsEditing(news);
+        const {modalActionCreators} = props
         const {showModal, changeModalTitle, changeModalContent} = modalActionCreators;
+        
         showModal();
         changeModalTitle("Sua Bai Viet");
         changeModalContent(<NewsForm/>)
       }
+      const onClickDelete =(data)=> {
+        const {id} = data;
+        const { newsActionCreators } = props;
+        const {deleteNews} =  newsActionCreators;
+        deleteNews(id)
+      }
+      const handleClickDelete = news =>{
+        const { newsActionCreators, modalActionCreators } = props;
+        const {showModal, changeModalTitle, changeModalContent, hiddenModal} = modalActionCreators;
+        showModal();
+        changeModalTitle("Xoa Bai Viet");
+        changeModalContent(
+          <div className="d-flex justify-content-between">
+            <p>ban chac chan muon xoa <strong className="text-danger">{news.titleNews}</strong> chu</p>
+            <div>
+            <button className="btn btn-danger mr-2" onClick={hiddenModal} >NO</button>
+            <button className="btn btn-success" onClick={()=>onClickDelete(news)}>YES</button>
+            </div>
+          </div>
+        )
+      }
+      
       let renderNewsItem = () => {
         let { listNew } = props;
         let  xhtml = null;
@@ -43,6 +70,7 @@ const News = (props) => {
                 news = {item}
                 index = {index}
                 onClickEdit = {()=>handleClickEdit(item)}
+                onClickDelete = {()=> handleClickDelete(item)}
               />
             );
           }))

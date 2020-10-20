@@ -80,6 +80,33 @@ export const fetchListNewsError = (error)=> {
      }
  }
 
+ export const deleteNews = (id) => {
+     return {
+         type: newsConstants.DELETE_NEWS,
+         payload:{
+            id,
+         }
+     }
+ }
+ 
+ export const deleteNewsSuccess = (data) => {
+     return {
+         type: newsConstants.DELETE_NEWS_SUCCESS,
+         payload:{
+             data,
+         }
+     }
+ }
+
+ export const deleteNewsError = (error) => {
+     return {
+         type: newsConstants.FETCH_NEWS_ERROR,
+         payload : {
+             error,
+         }
+     }
+ }
+
  export const setNewsEditing = (news) =>{
      return {
          type: newsConstants.SET_NEWS_EDITING,

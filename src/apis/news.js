@@ -14,3 +14,10 @@ export const getList = (page, limit) => {
 export const addNews = data => {
     return axiosService.post(`${API_ENDPOINT}/${url}`, data)
 }
+
+export const  updateNews = (data, newsId) => {
+    return axiosService.put(`${API_ENDPOINT}/${url}/${newsId}`, data)
+}
+export const  deleteNews = (newsId) => {
+    return axiosService.delete(`${API_ENDPOINT}/${url}/${newsId}`)
+}
